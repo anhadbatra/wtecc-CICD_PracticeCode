@@ -6,8 +6,8 @@ on:
     branches: ["main"]
 jobs:
     build:
-    runs-on: ubuntu-latest 
-    container: python:3.9-slim
+      runs-on: ubuntu-latest 
+      container: python:3.9-slim
 steps:
   - name: Checkout
     uses: actions/checkout@v3
@@ -21,4 +21,3 @@ steps:
       flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
   - name: Run unit tests with nose 
     run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
-    
